@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <title>Portfolio • Modern Apple Style</title>
+    <meta name="description" content="A modern, Apple-inspired personal portfolio." />
+    <meta property="og:title" content="Portfolio • Modern Apple Style" />
+    <meta property="og:description" content="A modern, Apple-inspired personal portfolio." />
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%2300d4ff'/%3E%3Cstop offset='1' stop-color='%238fff00'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://api.github.com" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-mesh" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="brand-dot"></span>
+          <span class="brand-text">Portfolio</span>
+        </a>
+        <nav class="nav">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="site-main container">
+      <section class="hero" id="hero">
+        <div class="hero-content">
+          <div class="avatar-wrap">
+            <img id="avatar" class="avatar" alt="Profile avatar" />
+          </div>
+          <h1 class="hero-title">
+            <span class="subtle">Hello, I’m</span>
+            <span id="name" class="gradient-text">Your Name</span>
+          </h1>
+          <p id="tagline" class="hero-tagline">Crafting thoughtful software experiences.</p>
+          <div class="hero-cta">
+            <a id="primaryCta" class="btn btn-primary" href="#work">View Work</a>
+            <a id="secondaryCta" class="btn btn-ghost" href="#contact">Get in Touch</a>
+          </div>
+          <div id="socials" class="hero-socials" aria-label="Social links"></div>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Featured Work</h2>
+          <p class="section-subtitle">Selected projects, fetched from GitHub.</p>
+        </div>
+        <div id="projectsGrid" class="projects-grid" role="list"></div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-header">
+          <h2 class="section-title">About</h2>
+          <p class="section-subtitle">A little more about me.</p>
+        </div>
+        <div class="about-card glass">
+          <div class="about-meta">
+            <div>
+              <div class="about-row"><span class="label">Name</span><span id="aboutName">Your Name</span></div>
+              <div class="about-row"><span class="label">Location</span><span id="aboutLocation">—</span></div>
+              <div class="about-row"><span class="label">Company</span><span id="aboutCompany">—</span></div>
+            </div>
+            <div>
+              <div class="about-row"><span class="label">Website</span><span id="aboutWebsite">—</span></div>
+              <div class="about-row"><span class="label">Twitter</span><span id="aboutTwitter">—</span></div>
+              <div class="about-row"><span class="label">Email</span><span id="aboutEmail">—</span></div>
+              <div class="about-row"><span class="label">LinkedIn</span><span id="aboutLinkedIn">—</span></div>
+            </div>
+          </div>
+          <p id="aboutBio" class="about-bio">I design and build elegant, high-performance applications with care for details and usability.</p>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Skills &amp; Tools</h2>
+          <p class="section-subtitle">Technologies I work with.</p>
+        </div>
+        <div id="skillsGrid" class="skills-grid"></div>
+      </section>
+
+      <section id="stats" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Stats</h2>
+          <p class="section-subtitle">A snapshot of my activity.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="card">
+            <h3 class="card-title">LeetCode</h3>
+            <p class="card-desc"><span id="leetcodeSolved">—</span> solved • <span id="leetcodeSubmissions">—</span> submissions</p>
+            <a id="leetcodeLink" class="btn btn-ghost" href="#" target="_blank" rel="noopener">View Profile</a>
+          </div>
+          <div class="card">
+            <img id="githubStatsImg" alt="GitHub Stats" style="width:100%; border-radius:12px;" />
+          </div>
+          <div class="card">
+            <img id="githubLangsImg" alt="Top Languages" style="width:100%; border-radius:12px;" />
+          </div>
+          <div class="card">
+            <div class="wakatime-badge"><img id="wakatimeBadgeImg" alt="WakaTime Badge" /></div>
+            <img id="wakatimeCardImg" alt="WakaTime Stats" style="width:100%; border-radius:12px; margin-top:10px;" />
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="cta glass">
+          <h3>Let’s build something great</h3>
+          <p>Open to collaborations, consulting, and full-time roles.</p>
+          <div class="cta-actions">
+            <a id="contactButton" class="btn btn-primary" href="#">Contact Me</a>
+            <a id="resumeButton" class="btn btn-ghost" href="#" target="_blank" rel="noopener">Resume</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span id="footerName">Your Name</span>
+        <span>•</span>
+        <span id="footerTag">Built with love and vanilla JS</span>
+      </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

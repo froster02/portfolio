@@ -416,6 +416,67 @@ h6 {
     background: var(--background-color);
 }
 
+/* Education Section */
+.education {
+    padding: 6rem 0;
+    background: var(--background-color);
+}
+
+.education-content {
+    display: flex;
+    justify-content: center;
+}
+
+.education-card {
+    background: var(--card-color);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    max-width: 500px;
+    width: 100%;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.education-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    background: var(--surface-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.education-details h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.education-institution {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.education-year {
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+}
+
 /* Certifications Section */
 .certifications {
     padding: 6rem 0;
@@ -1127,6 +1188,10 @@ h6 {
         gap: 1.5rem;
     }
 
+    .coding-stats {
+        grid-template-columns: 1fr;
+    }
+
     .leetcode-info {
         gap: 2rem;
     }
@@ -1172,6 +1237,12 @@ h6 {
         font-size: 3rem;
     }
 
+    .education-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
     .about-card,
     .stat-item,
     .skill-category {
@@ -1192,13 +1263,29 @@ h6 {
     }
 }
 
-/* Smooth scrolling and performance improvements */
-.section-header,
-.about-card,
-.skill-category,
-.project-card,
-.contact-item {
-    will-change: transform;
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .hero,
+    .scroll-indicator,
+    .profile-circle,
+    .experience-item::after,
+    .about-card,
+    .stat-item,
+    .project-card {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .hero-text,
+    .hero-image {
+        animation: none !important;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Light mode variables */
@@ -1331,15 +1418,11 @@ body.light-theme .contact-link.github {
     border: 2px solid var(--border-color);
 }
 
-/* Dark mode improvements */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #000000;
-        --surface-color: #1C1C1E;
-        --card-color: #2C2C2E;
-        --text-primary: #FFFFFF;
-        --text-secondary: #8E8E93;
-        --text-tertiary: #636366;
-        --border-color: #38383A;
-    }
+/* Light mode overrides for contact links */
+body.light-theme .contact-link.email .contact-icon {
+    background: var(--gradient-1);
+}
+
+body.light-theme .contact-link.phone .contact-icon {
+    background: #34C759;
 }
